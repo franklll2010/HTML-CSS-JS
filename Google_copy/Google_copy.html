@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GoogleCopy</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="Style.css">
+    <script type="text/javascript">
+        //JS监听浏览器文字大小代码
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+<header class="row">
+    <div id="head1">
+    <ul class="nav nav-pills" id="headnav">
+        <li><a href="#"  style="text-align:center;font-size: 0.2rem;color: black">邮箱</a></li>
+        <li><a href="https://pixabay.com/"  style="text-align: center;font-size: 0.2rem;color: black" target="_blank">图片</a></li>
+        <li><a href="#"  style="text-align: center;font-size: 0.2rem"><img src="src/tb1.png" alt=""></a></li>
+        <li class="active" data-toggle="modal" data-target="#login" id="denglu"><a href="#"  style="text-align: center;font-size: 0.2rem;color: snow">登录</a></li>
+    </ul>
+    </div>
+</header>
+<article class="row" style="text-align: center">
+    <div style="width: 100%;float: left"><img src="src/google.png" alt="" style="padding-top: 100px"></div>
+    <div style="width: 100%;float: left"></div>
+    <form action="" class="bs-example bs-example-form" role="form">
+        <div class="input-group input-group-lg" style="width: 50%;margin-left: 25%;padding-top: 30px" >
+            <input type="text" class="form-control" placeholder="谷歌一下，你就知道" id="bingserch"><span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+            <img src="src/mic.png" alt="" height="22"></button>
+        </span>
+        </div>
+        <div style="width: 50%;margin-left: 25%;float: left;text-align: center;padding-top: 30px">
+            <div id="input1" style="float: left;width: 50%;padding-left: 28%"><button type="submit" class="btn btn-default" style="background-color: lightgrey" id="bings">Google搜索</button></div>
+            <div id="input2" style="float: right;width: 50%;padding-right: 28%"><button type="submit" class="btn btn-default" style="background-color: lightgrey">手气不错</button></div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $('#bings').click(function () {
+                    window.open('https://www.baidu.com/s?wd='+$('#bingserch').val())
+                })
+            })
+        </script>
+    </form>
+    <div style="width: 100%;text-align: center;float: left;margin-top: 20px">
+        <p>
+            Google.com.hk 使用下列语言 <a href="#" title="切换为繁体中文">中文（繁体）</a> <a href="#" title="Change to English version">English</a>
+        </p>
+    </div>
+</article>
+<footer class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="padding-bottom: 0;background-color: #f2f2f2">
+    <div id="bot1" style="width: 50%;float:left;padding-bottom: 0">
+        <div width="10px" style="float: left;padding-left: 20px;padding-bottom: 0">
+        <ul class="nav nav-pills">
+            <li><a href="#"  style="text-align:center;font-size: 0.15rem;color: black">广告</a></li>
+            <li><a href="#"  style="text-align: center;font-size: 0.15rem;color: black">商务</a></li>
+            <li><a href="#"  style="text-align: center;font-size: 0.15rem;color: black">Google大全</a></li>
+        </ul>
+        </div>
+    </div>
+    <div id="bot2" style="width: 50%;float: right;">
+        <div width="10px" style="float: right;padding-right: 20px;padding-bottom: 0">
+        <ul class="nav nav-pills">
+            <li><a href="#"  style="text-align:center;font-size: 0.15rem;color: black">隐私权</a></li>
+            <li  data-toggle="modal" data-target="#law"><a href="#"  style="text-align: center;font-size: 0.15rem;color: black">条款</a></li>
+            <li><a href="#"  style="text-align: center;font-size: 0.15rem;color: black">设置</a></li>
+        </ul>
+        </div>
+    </div>
+</footer>
+<div class="modal fade" id="law" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    法律条款
+                </h4>
+            </div>
+            <div class="modal-body">
+                本网站拥有所有的法律解释权
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+                <h4 class="modal-title" id="loginpage">
+                    登录页面
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="name">用户名</label>
+                        <input type="text" class="form-control" id="name" placeholder="请输入您的ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">密码</label>
+                        <input type="password" class="form-control" id="passwd" placeholder="请输入您的密码">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> 记住我
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-target="#logup" data-toggle="modal">
+                    注册
+                </button>
+                <button type="button" class="btn btn-primary" id="check" data-dismiss="modal">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="logup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+                <h4 class="modal-title" id="loguppage">
+                    注册页面
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="name">用户名</label>
+                        <input type="text" class="form-control" id="idadd" placeholder="请输入您的ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">密码</label>
+                        <input type="password" class="form-control" id="pwadd" placeholder="请输入您的密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="submit">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#submit').click(function () {
+            $.cookie($('#idadd').val(),$('#pwadd').val(),{ expires: 7 })
+        })
+        $('#check').click(function () {
+            if ($.cookie($('#name').val())!=null){
+                if ($.cookie($('#name').val()) == $('#passwd').val()){
+                    alert('Hello my friend')
+                    a = $('#name').val()
+                    $('#headnav').append('<li class="active"><a href="#"  style="text-align:center;font-size: 0.2rem;color: snow"id="addna" </a></li>')
+                    $('#addna').text(a+'个人空间')
+                    $('#denglu').remove()
+                }
+                else{
+                    alert('Try again')
+                }
+            }
+            else{
+                alert('Try again')
+            }
+        })
+    })
+</script>
+</body>
+</html>

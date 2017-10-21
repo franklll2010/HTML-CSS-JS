@@ -1,0 +1,12 @@
+html{
+    min-width: 850px;
+}
+header{
+    font:normal 100% Arial,sans-serif;
+    font-size:0.25rem;
+}
+#head1{
+    float: right;
+    margin-right: 30px;
+    margin-top: 10px;
+}
